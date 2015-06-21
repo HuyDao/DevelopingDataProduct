@@ -1,0 +1,28 @@
+<html>
+
+<head>
+<title>Documentation for Investment Yield Calculator Shiny App</title>
+</head>
+
+<body>
+
+<p>This application shows potential investment yield over years taking into account inflation and predicted market appreciation.</p>
+
+<p> Inputs:</p>
+<p><b>Investment Sum</b> = sum of money you plan to invest.</p>
+<p><b>Years</b> = number of years you plan to keep that sum invested.</p>
+<p><b>Inflation</b> = percentage on inflation per year, in a slider form. The value is used to calculate the decrease of value per year.</p>
+<p><b>Bank Rate</b> = percentage on bank interest per year, in a slider form. The value is used to calculate the added value due to bank interest per year.</p>
+<p><b>Investment Rate</b> = percentage on investment return per year, in a slider form. The value is used to calculate the added value due to financial investment gains / losses per year.</p>
+
+<p>Outputs:</p>
+<p><b>Value of sum</b> = What sum of money you need at the end of the investment period to be on par with the value of money you plan to invest today.</p>
+<p><b>Cash Yield</b> = Value of today's money at the end of the investment period, if you keep the cash and do nothing with that money. It is caculated by reducing the amount of inflation every year.</p>
+<p><b>Bank Yield</b> = Value of today's money at the end of the investment period, if you keep the money in a bank account. It is caculated by adding the annual bank given interest to the money and then applying inflation.</p>
+<p><b>Investment Yield</b> = Value of today's money at the end of the investment period, if you invest the money in the financial market. It is caculated by adding the annual return of investment to the money and then applying inflation.</p>
+<p>All calculations are made considering the inflation, bank interest and investment return rates as identical across all years. Consider them s averages of rates expectations.</p>
+
+<p>For each Output, there is a plot giving a visual representation of gain/loss based on all the input variables.</p>
+
+</body>
+</html>
