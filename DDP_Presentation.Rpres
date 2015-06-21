@@ -1,0 +1,90 @@
+Investment Calculator
+========================================================
+author: Huy Dao
+font-family: 'Calibri'
+date: `r date()`
+
+Why an Investment Calculator?
+========================================================
+
+
+It is always a challenge to decide what to do with your retirement money. Before investing though, you should have at least a basic idea of what would happen in different market scenarios.
+
+
+The application aims to give everyone a simple view of their choices based on the market levers: inflation, bank rates and financial investments returns, as an incentive to actually go and discuss their choices with a professional. 
+
+App View
+========================================================
+<small>App URL: https://ddpshinyurl.shinyapps.io/DevelopingDataProduct</small>
+
+![alt text](Calc.png)
+
+Cash Value over Years
+========================================================
+left: 30%
+
+<small>For people who plan to downsize their expenses and want to know if they will have enough money for their projected expenses, the application shows how much their money value will be over the years and the need for extra financial resources to sustain the buying power their money has today. </small>
+
+***
+<small>To have today's power of buying, you need to have: \($\) 57963.7 </small>
+
+<small>Cash Yield in 5 year at 2.4% inflation: \($\)42936.7</small>
+```{r, echo=FALSE}
+inflation = -0.024
+growSum <- 50000   
+linePlace <- 5
+cData<-data.frame(1, 1)
+for (i in 1:50)
+{
+  growSum<-growSum + (growSum*inflation)
+  cData[i,1]<-as.numeric(round(growSum, digits = 2))
+  cData[i, 2] <- i
+}
+plot(cData[, 2], cData[, 1], xlab = "Year of investment", ylab = "Sum", main = "Depreciation of cash over years", col="blue", type = "o")
+lines(cData[, 2], cData[, 1], type = "h", lwd=1.5, col = "red") 
+lines(cData[5, 2], cData[5, 1], type = "h", lwd=5, col = "black") 
+      
+```
+
+
+Bank or Market Investment?
+========================================================
+<small>Bank Yield at 2.4% inflation and 1.5% bank interest in 5 years: \($\)45125.9</small>
+```{r, echo=FALSE}
+inflation = -0.024
+bRate = 0.015
+growSum <- 50000   
+linePlace <- 5
+cData<-data.frame(1, 1)
+for (i in 1:50)
+{
+  growSum<-growSum + (growSum*bRate)
+  growSum<-growSum + (growSum*inflation)
+  cData[i,1]<-as.numeric(round(growSum, digits = 2))
+  cData[i, 2] <- i
+}
+plot(cData[, 2], cData[, 1], xlab = "Year of investment", ylab = "Sum", main = "Depreciation of cash over years", col="blue", type = "o")
+lines(cData[, 2], cData[, 1], type = "h", lwd=1.5, col = "red") 
+lines(cData[5, 2], cData[5, 1], type = "h", lwd=5, col = "black") 
+      
+```
+***
+<small>Investment Yield at 2.4% inflation and 6.5% investment return in 5 years: \($\)57458.99</small>
+```{r, echo=FALSE}
+inflation = -0.024
+bRate = 0.060
+growSum <- 50000   
+linePlace <- 5
+cData<-data.frame(1, 1)
+for (i in 1:50)
+{
+  growSum<-growSum + (growSum*bRate)
+  growSum<-growSum + (growSum*inflation)
+  cData[i,1]<-as.numeric(round(growSum, digits = 2))
+  cData[i, 2] <- i
+}
+plot(cData[, 2], cData[, 1], xlab = "Year of investment", ylab = "Sum", main = "Depreciation of cash over years", col="blue", type = "o")
+lines(cData[, 2], cData[, 1], type = "h", lwd=1.5, col = "red") 
+lines(cData[5, 2], cData[5, 1], type = "h", lwd=5, col = "black") 
+      
+```
