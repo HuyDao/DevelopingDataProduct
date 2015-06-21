@@ -2,7 +2,7 @@ Investment Calculator
 ========================================================
 author: Huy Dao
 font-family: 'Calibri'
-date: Sun Jun 21 12:30:53 2015
+date: Sun Jun 21 12:35:15 2015
 
 Why an Investment Calculator?
 ========================================================
